@@ -57,7 +57,7 @@ input_dict = {
 # Convert input to DataFrame
 input_df = pd.DataFrame([input_dict])
 
-# 🔥 IMPORTANT FIX: force categorical columns to string
+#  IMPORTANT FIX: force categorical columns to string
 categorical_cols = [
     "transaction type",
     "merchant_category",
@@ -87,7 +87,7 @@ for col in categorical_cols:
 # One-hot encoding
 input_df = pd.get_dummies(input_df)
 
-# ✅ FINAL FIX: match training features EXACTLY
+# FINAL FIX: match training features EXACTLY
 input_df = input_df.reindex(columns=features, fill_value=0)
 # -------- FIX ENDS HERE -------- #
 
